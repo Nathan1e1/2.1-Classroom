@@ -6,14 +6,6 @@
 
 # Not complete, but a suggestion of the process
 
-from service import services
-from order import order
-
-def read_by_id(id):
-    order = services.read_by_id(id)
-    return order
-
-
 # def enter_order():
 #     order = int(input("Please enter type of order: "))
 #     order_choices = ['1', '2', '3', '4', '5', '6',]
@@ -29,7 +21,12 @@ def read_by_id(id):
 
 # print(enter_order())
 
-# 
+from service import services
+from order import order
+
+def read_by_id(id):
+    order = services.read_by_id(id)
+    return order
 
 def getData(self):
     name = input("Please enter your name: ")

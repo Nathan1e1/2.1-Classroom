@@ -1,16 +1,6 @@
 # The runner contains the code to Create a User Interface for the Cafe to interact with
 # This 'runs' the code and will interact with the Controller directly
 
-# from service import *
-# from controller import *
-
-# conn = connectDB()
-# cursor = createCursor(conn)
-
-
-# service1 = service(cursor)
-# controller1 = controller(cursor, service1)
-
 print("""
 -------- Welcome to QA Cafe --------
 
