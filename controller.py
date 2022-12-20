@@ -6,24 +6,35 @@
 
 # Not complete, but a suggestion of the process
 
-def enter_order():
-    order = int(input("Please enter type of order: "))
-    order_choices = ['1', '2', '3', '4', '5', '6',]
-    if order not in order_choices:
-        return "Please enter a valid order type."
-
-def add_order():
-    order_id = random.randint(1, 1000)
-    order_choices = ['Espresso', 'Americano', 'Mocha', 'Flat White']
-    order = int(input("Please enter coffee: "))
-    if order not in order_choices:
-        return "Please enter a valid coffee: (Espresso, Americano, Mocha or Flat White)"
-
-print(enter_order())
+# def read_by_id(id):
+#     order = service.read_by_id(id)
+#     return order
 
 
+# def enter_order():
+#     order = int(input("Please enter type of order: "))
+#     order_choices = ['1', '2', '3', '4', '5', '6',]
+#     if order not in order_choices:
+#         return "Please enter a valid order type."
 
+# def add_order():
+#     order_id = random.randint(1, 1000)
+#     order_choices = ['Espresso', 'Americano', 'Mocha', 'Flat White']
+#     order = int(input("Please enter coffee: "))
+#     if order not in order_choices:
+#         return "Please enter a valid coffee: (Espresso, Americano, Mocha or Flat White)"
 
-def read_by_id(id):
-    order = service.read_by_id(id)
+# print(enter_order())
+
+# 
+
+def getData(self):
+    name = input("Please enter your name: ")
+    coffee = input("Please enter your coffee name: ")
+    temperature = input("Please enter the temperature of the coffee: ")
+    size = input("Please enter the size of your coffee: ")
+    cost = float(input("Please enter the price: "))
+    order = Order(name, coffee, temperature, size, cost)
     return order
+
+def choice(self)
