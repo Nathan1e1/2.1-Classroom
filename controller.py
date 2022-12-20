@@ -6,9 +6,12 @@
 
 # Not complete, but a suggestion of the process
 
-# def read_by_id(id):
-#     order = service.read_by_id(id)
-#     return order
+from service import services
+from order import order
+
+def read_by_id(id):
+    order = services.read_by_id(id)
+    return order
 
 
 # def enter_order():
@@ -34,7 +37,52 @@ def getData(self):
     temperature = input("Please enter the temperature of the coffee: ")
     size = input("Please enter the size of your coffee: ")
     cost = float(input("Please enter the price: "))
-    order = Order(name, coffee, temperature, size, cost)
+    order = order(name, coffee, temperature, size, cost)
     return order
 
-def choice(self)
+def choice(self):
+
+    choice = int(input("Please select an Order from 1 - 6: "))
+    if choice == 1:
+        order1 = self.getData()
+        return self.createOrder(order1)
+    elif choice == 2:
+        id = int(input("Please enter ID to view: "))
+        return self.viewOrderId(id)
+    elif choice == 3:
+        return self.viewAllOrders()
+    elif choice == 4:
+        id = int(input("Please enter the ID of the order to update: "))
+        order1 =self.getData()
+        return self.updateOrder(id, order1)
+    elif choice == 5:
+        id = int(input("Please enter the ID to delete: "))
+        return self.deleteOrder(id)
+    elif choice == 6:
+        return self.deleteAllOrders()
+    else:
+        return "Miss input!"
+
+def viewAllOrders(self):
+    data = self.services.viewAllOrders()
+    return data
+
+def viewOrderId(self, id):
+    data = self.service.viewOrderId(id)
+    return data
+
+def createOrder(self, order):
+    check = self.service.createOrder(order)
+    return check
+
+def deleteOrder(self, id):
+    check = self.service.delAllOrder()
+    return check
+
+def deleteAllOrder(self):
+    check = self.service.delAllOrder()
+    return check
+
+def deleteAllOrders(self):
+    data = self.service.updateOrderId(id, order)
+    return data
