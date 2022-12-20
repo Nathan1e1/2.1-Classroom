@@ -1,6 +1,14 @@
 # The runner contains the code to Create a User Interface for the Cafe to interact with
 # This 'runs' the code and will interact with the Controller directly
 
+from db import createCursor
+from service import *
+from controller import *
+
+conn = connectDB('order')
+cursor = createCursor(conn)
+s = services(cursor=cursor)
+s.addOrder(coffee="flat",customer_name="abdul",temperature="80",size="L",price=9.00)
 print("""
 -------- Welcome to QA Cafe --------
 

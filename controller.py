@@ -21,8 +21,8 @@
 
 # print(enter_order())
 
+from collections import OrderedDict
 from service import services
-from order import order
 
 def read_by_id(id):
     order = services.read_by_id(id)
@@ -81,5 +81,5 @@ def deleteAllOrder(self):
     return check
 
 def deleteAllOrders(self):
-    data = self.service.updateOrderId(id, order)
+    data = self.service.updateOrderId(id, OrderedDict)
     return data

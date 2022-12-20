@@ -17,8 +17,8 @@ class services():
         data = self.cursor.execute(query)
         return
 
-    def addOrder(self):
-        query = "INSERT INTO orders (customer_name, coffee, temperature, size, price)"
+    def addOrder(self, customer_name, coffee, temperature, size, price):
+        query = f"INSERT INTO orders ({customer_name}, {coffee}, {temperature}, {size}, {price})"
         self.runQuery(query)
         return True
 
