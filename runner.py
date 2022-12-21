@@ -4,11 +4,22 @@
 from db import createCursor
 from service import *
 from controller import *
+import sqlite3 
 
-conn = connectDB('order')
-cursor = createCursor(conn)
-s = services(cursor=cursor)
-s.addOrder(coffee="flat",customer_name="abdul",temperature="80",size="L",price=9.00)
+conn = sqlite3.connect("order.db")
+
+cursor = conn.cursor()
+# creating a table
+# cursor.execute("CREATE TABLE new (order_id INTEGER PRIMARY KEY AUTOINCREMENT, customer_name VARCHAR(30), coffee VARCHAR(30), temperature VARCHAR(20), SIZE VARCHAR(20), price DECIMAL)")
+# conn.commit()
+query = f"INSERT INTO orders values('1', 'abdul', 'flat', '80', 'L', '9.00')"
+cursor.execute(query)
+conn.commit()
+
+# conn = connectDB('order.db')
+# cursor = createCursor(conn)
+# s = services(cursor=cursor)
+# s.addOrder(coffee="flat",customer_name="abdul",temperature=80,size="L",price=9.00)
 print("""
 -------- Welcome to QA Cafe --------
 

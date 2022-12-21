@@ -4,7 +4,7 @@
 import sqlite3 as sqlite
 
 def connectDB(order):
-    conn  = sqlite.connect("order")
+    conn  = sqlite.connect(order)
     return conn
 
 def createCursor(conn):
@@ -22,9 +22,9 @@ def createDB(cursor):
     print(cursor.executre("SELECT name FROM sqlite_master WHERE type='table';").fetchall())
 
 def runCode():
-    conn = connectDB("order")
+    conn = connectDB("order.db")
     cursor = createCursor(conn)
     commitDB(conn)
 
-conn = connectDB("order")
-cursor = createCursor(conn)
+# conn = connectDB("order.db")
+# cursor = createCursor(conn)
